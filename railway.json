@@ -1,0 +1,33 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "services": {
+    "pg-0": {
+      "source": { "type": "dockerfile", "path": "." },
+      "env": {
+        "NODE_ID": "1",
+        "PRIMARY_HOST": "pg-0"
+      },
+      "volumes": [{ "mountPath": "/var/lib/postgresql/data" }],
+      "ports": [5432]
+    },
+    "pg-1": {
+      "source": { "type": "dockerfile", "path": "." },
+      "env": {
+        "NODE_ID": "2",
+        "PRIMARY_HOST": "pg-0"
+      },
+      "volumes": [{ "mountPath": "/var/lib/postgresql/data" }],
+      "ports": [5432]
+    },
+    "pg-2": {
+      "source": { "type": "dockerfile", "path": "." },
+      "env": {
+        "NODE_ID": "3",
+        "PRIMARY_HOST": "pg-0"
+      },
+      "volumes": [{ "mountPath": "/var/lib/postgresql/data" }],
+      "ports": [5432]
+    }
+  }
+}
+
